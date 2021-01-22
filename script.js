@@ -1,4 +1,4 @@
-
+/*
 var firebaseConfig = {
     apiKey: "AIzaSyBfpD1gxJTafxs-OnT-IohOZYVZJsk2W7Y",
     authDomain: "analyticstrial-f2fa1.firebaseapp.com",
@@ -10,7 +10,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+firebase.analytics();*/
 
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -53,7 +53,7 @@ showPosition();
 function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
+/*
 function writeData(){
     
     firebase.database().ref('users/'+today + " " + t).set({
@@ -68,7 +68,7 @@ function sendData(){
     setInterval(function(){
         writeData();
     },2000);
-}
+}*/
 
 TimeMe.initialize({
     currentPageName: "my-home-page", // current page 
