@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>
+            Web analytics
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+       <!-- <script src ='https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js'></script>-->
+       <script src="timeme.min.js"></script>
+      
+    
+      
+       
+   <style>
+        body {
+            background-color: powderblue;
+            color: black;
+        }
+        a{
+            color: cornflowerblue;
+        }
+        
+    </style>
+    </head>
+    <body>
+
+        <div id = "container"></div>
+        <div>
+            <input type="button" id="bt" value="Save data to file" />
+           
+        </div>
+        <div class="time-message">
+            <h1>
+                <span id="timeInSeconds">0</span> <span>seconds</span>
+            </h1>
+        </div>
+        
+
+         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+        
+
+        <script type="module" src="script.js"   ></script>
+       
+    </body>
+</html>

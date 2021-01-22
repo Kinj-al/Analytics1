@@ -1,0 +1,86 @@
+<head>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+  </head>
+  
+  <p>
+      Here's a simple Plotly plot - 
+      <a href="https://bit.ly/1Or9igj">plotly.js documentation</a>
+  </p>
+  
+  <div id="tester" style="width:90%;height:600px;"></div>
+
+  <script type = "module">
+
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyBfpD1gxJTafxs-OnT-IohOZYVZJsk2W7Y",
+        authDomain: "analyticstrial-f2fa1.firebaseapp.com",
+        projectId: "analyticstrial-f2fa1",
+        storageBucket: "analyticstrial-f2fa1.appspot.com",
+        messagingSenderId: "1094776950105",
+        appId: "1:1094776950105:web:8bdeefdf5a93dd0fb15048",
+        measurementId: "G-282MRDV3BR"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    //window.addEventListener("load", genFunction);
+
+    var cdata = [];
+    var database = firebase.database();
+    var ref = database.ref('users');
+//ref.orderByChild("Count").limitToLast(5).once('value', function(snapshot){
+
+    var timeArray = [];
+    var countArray = [];
+genFunction();
+    function genFunction(data) {
+
+        
+
+
+        ref.orderByValue().on('child_added', function (snapshot) {
+           // ref.once('value',function(snapshot){
+        //console.log(snapshot.val().Count);
+        //console.log(snapshot.val().Time);
+        //console.log(snapshot.val().PageName);
+        console.log(snapshot.val());
+        timeArray.push(snapshot.val().Time);
+       
+        countArray.push(snapshot.val().Count);
+
+        console.log(timeArray);
+        console.log(countArray);
+
+        var TESTER = document.getElementById('tester');
+     
+     Plotly.plot( TESTER, [{
+    
+      //x: [1, 0, 3, 0, 5],
+      //y: [1, 2, 4, 8, 16], 
+      x : countArray,
+         y : countArray,
+         type : 'bar',
+         marker: {
+        color: 'rgb(142,124,195)',
+        opacity: 0.7,
+        }
+         
+         //
+     }]);
+
+    });
+   
+
+
+    }
+
+    
+    
+  </script>
