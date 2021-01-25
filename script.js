@@ -1,16 +1,3 @@
-/*
-var firebaseConfig = {
-    apiKey: "AIzaSyBfpD1gxJTafxs-OnT-IohOZYVZJsk2W7Y",
-    authDomain: "analyticstrial-f2fa1.firebaseapp.com",
-    projectId: "analyticstrial-f2fa1",
-    storageBucket: "analyticstrial-f2fa1.appspot.com",
-    messagingSenderId: "1094776950105",
-    appId: "1:1094776950105:web:8bdeefdf5a93dd0fb15048",
-    measurementId: "G-282MRDV3BR"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();*/
 
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -94,7 +81,7 @@ function printTime(){
 TimeMe.callWhenUserLeaves(function(){
     console.log("The user is not currently viewing the page!");
     console.log(timeSpentOnPage);
-    writeData();
+   // writeData();
 
 }, 50);
 
@@ -117,25 +104,6 @@ $("#bt").click(function(){
    // saveFile();
     window.open("chart.html");
 });
-// var cdata = [];
-// var database = firebase.database();
-// var ref = database.ref('users');
-// //ref.orderByChild("Count").limitToLast(5).once('value', function(snapshot){
-//     ref.orderByValue().on('child_added', function (snapshot) {
-//     console.log(snapshot.val().Count);
-//     console.log(snapshot.val().Date);
-//     console.log(snapshot.val().PageName);
-//     //var cdata = [];
-//     cdata.push({
-//         label: snapshot.val().PageName,
-//         value: snapshot.val().Count
-//       });
-
-//       console.log(cdata);
-
-
-// });
-
 
 
 
