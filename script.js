@@ -74,7 +74,7 @@ TimeMe.initialize({
     currentPageName: "my-home-page", // current page 
     idleTimeoutInSeconds: 30 // seconds
 });
-sendData();
+//sendData();
 window.onload = function(){
     setInterval(function(){
 
