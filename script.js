@@ -100,11 +100,20 @@ function onDocumentClick( event )
     console.log(count);
 
 }
-$("#bt").click(function(){
+$("#bt1").click(function(){
    // saveFile();
     window.open("chart.html");
 });
-
+$("#bt2").click(function(){
+    // saveFile();
+     //window.open("chart.html");
+     console.log("Button 2");
+ });
+ $("#bt3").click(function(){
+    // saveFile();
+     //window.open("chart.html");
+     console.log("Button 3");
+ });
 
 
 
